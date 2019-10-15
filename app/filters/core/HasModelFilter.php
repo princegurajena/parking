@@ -18,7 +18,6 @@ trait HasModelFilter
      * @param array $overrides
      * @return Builder
      */
-
     public function scopeFilter(Builder $query, ModelFilter $filters, array $overrides = [] ): Builder
     {
         return $filters->apply($query, $overrides);

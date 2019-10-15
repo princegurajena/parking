@@ -16,7 +16,9 @@ class VehicleController extends Controller
      */
     public function index(VehicleFilter $filter)
     {
-        $vehicles = Vehicle::filter($filter , [])->latest()->paginate(20);
+        $vehicles = Vehicle::filter($filter , [
+            'user_id' => auth()->user()->role === 'admin' ? null : auth()->id()
+        ])->latest()->paginate(20);
 
         return  view('vehicle.index' , [
             'vehicles' => $vehicles

@@ -2,9 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ae9fb84-e890-4d78-af87-3468c90660ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Policies/SystemPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/System.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/filters/PaymentFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/filters/RequestsFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/booking/error-end.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/booking/success.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/parking-msu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/parking-msu.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParkingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParkingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RequestsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RequestsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ParkingSpace.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ParkingSpace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Requests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Requests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/filters/VehicleFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/filters/VehicleFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/filters/core/HasModelFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/filters/core/HasModelFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_08_081549_create_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_08_081549_create_payments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/booking/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/booking/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parking-space/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parking-space/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parking/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parking/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/payment/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payment/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/requests/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/requests/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,26 +145,31 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/vendor/paynow/php-sdk" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
     </include_path>
   </component>
   <component name="ProjectId" id="1RutKowPXQY6g5LabVPVQIGo2Jw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/booking" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/filters" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/filters" />
+      <recent name="$PROJECT_DIR$/resources/views/payment" />
+      <recent name="$PROJECT_DIR$/resources/views/requests" />
+      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/resources/views/booking" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/booking" />
-      <recent name="$PROJECT_DIR$/app/filters" />
-      <recent name="$PROJECT_DIR$/core/filters" />
-      <recent name="$PROJECT_DIR$/resources/views/vehicle" />
-      <recent name="$PROJECT_DIR$/resources/views/users" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -172,7 +212,10 @@
       <workItem from="1570868005855" duration="15920000" />
       <workItem from="1570905524563" duration="2391000" />
       <workItem from="1570918282881" duration="1791000" />
-      <workItem from="1570947241624" duration="29386000" />
+      <workItem from="1570947241624" duration="30089000" />
+      <workItem from="1571033651275" duration="7841000" />
+      <workItem from="1571062778430" duration="7040000" />
+      <workItem from="1571127711091" duration="1180000" />
     </task>
     <servers />
   </component>
@@ -184,10 +227,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

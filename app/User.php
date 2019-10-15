@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 /**
  * @property mixed email
+ * @property mixed role
  */
 class User extends Authenticatable
 {

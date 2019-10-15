@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\filters\ParkingSpaceFilter;
 use App\ParkingSpace;
+use App\Payment;
 use App\Requests;
 use App\Vehicle;
 use Illuminate\Http\Request;
@@ -117,18 +118,68 @@ class ParkingController extends Controller
 
     public function online(Requests $request){
 
-        if ( (int)$request->id === (int)\request()->get('id') && $request->ref === \request()->get('ref')){
+        if ((int)$request->id === (int)\request()->get('id') && $request->ref === \request()->get('ref')){
 
+            $request = $this->authorisePayment($request);
             $location = $request->location;
-            $location->update([
 
+            return view('booking.success' , [
+                'location' => $location,
+                'request' => $request,
             ]);
-
-            $request->update([
-
-            ]);
-
         }
 
+        $location = $request->location;
+
+        return view('booking.error-end' , [
+            'location' => $location,
+            'request' => $request,
+        ]);
+
+    }
+
+    public function override(Requests $request){
+
+        $request = $this->authorisePayment($request);
+        $location = $request->location;
+
+        return view('booking.success' , [
+            'location' => $location,
+            'request' => $request,
+        ]);
+
+    }
+
+    /**
+     * @param Requests $request
+     * @return Requests
+     */
+    public function authorisePayment(Requests $request): Requests
+    {
+        $location = $request->location;
+
+        $location->update([
+            'occupied' => $request->type == 'park' ? now() : null,
+            'occupied_user_id' => $request->type == 'park' ? $request->user_id : null,
+            'reserved' => $request->type == 'reserve' ? now() : null,
+            'reserved_user_id' => $request->type == 'reserve' ? $request->user_id : null,
+            'vehicle_id' => $request->type == 'reserve' || $request->user_id == 'park' ? $request->vehicle_id : null,
+        ]);
+
+        $request->update([
+            'status' => 'completed'
+        ]);
+
+        Payment::query()->updateOrCreate([
+            'user_id' => $request->user_id,
+            'request_id' => $request->id,
+            'amount' => $request->amount,
+        ], [
+            'user_id' => $request->user_id,
+            'request_id' => $request->id,
+            'amount' => $request->amount,
+        ]);
+
+        return $request;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\filters\RequestsFilter;
 use App\Requests;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,14 @@ class RequestsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(RequestsFilter $filter)
     {
-        //
+        $requests =  Requests::filter($filter , [
+            'user_id' => auth()->user()->role === 'admin' ? null : auth()->id()
+        ])->latest()->paginate(20);
+        return view('requests.index' , [
+            'requests' => $requests
+        ]);
     }
 
     /**

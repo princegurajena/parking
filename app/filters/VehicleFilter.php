@@ -13,7 +13,8 @@ class VehicleFilter extends ModelFilter
         'search'
     ];
     protected  $equal = [
-        'id'
+        'id',
+        'user_id'
     ];
     protected  $dates = [];
     protected  $range = [];

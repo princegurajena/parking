@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\filters\core\HasModelFilter;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,9 +13,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property mixed ref
  * @property User user
  * @property mixed amount
+ * @property mixed type
+ * @property mixed user_id
+ * @property mixed vehicle_id
  */
 class Requests extends Model
 {
+    use HasModelFilter;
     protected $guarded = [];
 
     public function user(){

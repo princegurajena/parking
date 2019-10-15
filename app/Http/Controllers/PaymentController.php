@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\filters\PaymentFilter;
 use App\Payment;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,14 @@ class PaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PaymentFilter $filter)
     {
-        //
+        $payments = Payment::filter($filter , [
+            'user_id' => auth()->user()->role === 'admin' ? null : auth()->id()
+        ])->latest()->paginate(20);
+        return view('payment.index' , [
+            'payments' => $payments
+        ]);
     }
 
     /**

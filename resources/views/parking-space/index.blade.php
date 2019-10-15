@@ -77,14 +77,16 @@
                                        @endif
                                 </td>
                                 <td class="text-right">
-                                    @if($location->status != 'active')
-                                        <a href="/parking-space/{{ $location->id }}/activate" class="icon mr-2 text-success"><i class="fe fe-zap"></i></a>
-                                    @else
-                                        <a href="/parking-space/{{ $location->id }}/block" class="icon mr-2 text-danger"><i class="fe fe-zap-off"></i></a>
-                                    @endif
-                                    <a href="/parking-space/{{ $location->id }}/edit" class="icon mr-2 text-info"><i class="fe fe-edit"></i></a>
+                                    @can('admin', \App\System::class)
+                                        @if($location->status != 'active')
+                                            <a href="/parking-space/{{ $location->id }}/activate" class="icon mr-2 text-success"><i class="fe fe-zap"></i></a>
+                                        @else
+                                            <a href="/parking-space/{{ $location->id }}/block" class="icon mr-2 text-danger"><i class="fe fe-zap-off"></i></a>
+                                        @endif
+                                        <a href="/parking-space/{{ $location->id }}/edit" class="icon mr-2 text-info"><i class="fe fe-edit"></i></a>
+                                        <a href="/parking-space/{{ $location->id }}/delete" class="icon mr-2 text-danger"><i class="fe fe-trash"></i></a>
+                                    @endcan
                                     <a href="/parking-space/{{ $location->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>
-                                    <a href="/parking-space/{{ $location->id }}/delete" class="icon mr-2 text-danger"><i class="fe fe-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach

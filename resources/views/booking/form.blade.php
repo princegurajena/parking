@@ -49,7 +49,7 @@
                     <select id="type" type="text" class="form-control" name="type"  required>
                         <option value="">Choose</option>
                         <option value="park">Park Now</option>
-                        <option value=reserve"">Reserve</option>
+                        <option value="reserve">Reserve</option>
                     </select>
                 </div>
             </div>

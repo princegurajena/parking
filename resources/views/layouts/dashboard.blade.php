@@ -77,14 +77,24 @@
                                         <li class="nav-item">
                                             <a href="/dashboard" class="nav-link {{ $title == 'home' ? 'active' : '' }}"><i class="fe fe-bar-chart mr-3"></i>Dashboard</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="/parking-space/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-map-pin"></i>Parking Spaces</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/users/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-users"></i>Users</a>
-                                        </li>
+                                        @can('admin', \App\System::class)
+                                            <li class="nav-item">
+                                                <a href="/parking-space/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-map-pin"></i>Parking Spaces</a>
+                                            </li>
+                                        @endcan
+                                        @can('admin', \App\System::class)
+                                            <li class="nav-item">
+                                                <a href="/users/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-users"></i>Users</a>
+                                            </li>
+                                        @endcan
                                         <li class="nav-item">
                                             <a href="/vehicles/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-send"></i>Vehicles</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/requests/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-git-pull-request"></i>Requests</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/payments/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-shopping-cart"></i>Payments</a>
                                         </li>
                                     </ul>
                                 </div>

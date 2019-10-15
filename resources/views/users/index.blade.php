@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Parking Spaces</h3>
+                        <h3 class="card-title">Users</h3>
                     </div>
                     @if(session()->has('message'))
                         <div class="card-alert alert alert-icon alert-success">
@@ -50,12 +50,14 @@
                                     </td>
 
                                     <td class="text-right">
-                                        @if($user->role != 'admin')
-                                            <a href="/users/{{ $user->id }}/admin" class="icon mr-2 text-success"><i class="fe fe-zap"></i></a>
-                                        @else
-                                            <a href="/users/{{ $user->id }}/remove" class="icon mr-2 text-danger"><i class="fe fe-zap-off"></i></a>
-                                        @endif
-                                        <a href="/parking-space/{{ $user->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>
+                                        @can('admin', \App\System::class)
+                                            @if($user->role != 'admin')
+                                                <a href="/users/{{ $user->id }}/admin" class="icon mr-2 text-success"><i class="fe fe-zap"></i></a>
+                                            @else
+                                                <a href="/users/{{ $user->id }}/remove" class="icon mr-2 text-danger"><i class="fe fe-zap-off"></i></a>
+                                            @endif
+                                            <a href="/parking-space/{{ $user->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
