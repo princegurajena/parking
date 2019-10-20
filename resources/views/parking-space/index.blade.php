@@ -86,7 +86,7 @@
                                         <a href="/parking-space/{{ $location->id }}/edit" class="icon mr-2 text-info"><i class="fe fe-edit"></i></a>
                                         <a href="/parking-space/{{ $location->id }}/delete" class="icon mr-2 text-danger"><i class="fe fe-trash"></i></a>
                                     @endcan
-                                    <a href="/parking-space/{{ $location->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>
+{{--                                    <a href="/parking-space/{{ $location->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>--}}
                                 </td>
                             </tr>
                         @endforeach

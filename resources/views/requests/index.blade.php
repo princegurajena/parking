@@ -60,7 +60,7 @@
                                     </td>
 
                                     <td class="text-right">
-                                        <a href="/parking/{{ $request->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>
+{{--                                        <a href="/parking/{{ $request->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>--}}
                                         @can('admin', \App\System::class)
                                             <a href="/parking/{{ $request->id }}/override" class="icon mr-2 text-info"><i class="fe fe-zap"></i></a>
                                         @endcan

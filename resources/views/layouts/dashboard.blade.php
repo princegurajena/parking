@@ -74,9 +74,9 @@
                                         <li class="nav-item">
                                             <a href="/home" class="nav-link {{ $title == 'home' ? 'active' : '' }}"><i class="fe fe-map mr-3"></i>Home</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="/dashboard" class="nav-link {{ $title == 'home' ? 'active' : '' }}"><i class="fe fe-bar-chart mr-3"></i>Dashboard</a>
-                                        </li>
+{{--                                        <li class="nav-item">--}}
+{{--                                            <a href="/dashboard" class="nav-link {{ $title == 'home' ? 'active' : '' }}"><i class="fe fe-bar-chart mr-3"></i>Dashboard</a>--}}
+{{--                                        </li>--}}
                                         @can('admin', \App\System::class)
                                             <li class="nav-item">
                                                 <a href="/parking-space/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-map-pin"></i>Parking Spaces</a>

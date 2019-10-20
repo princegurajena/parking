@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col col-login mx-auto">
                 <div class="text-center mb-6">
-                   <h2>POS Management</h2>
+                   <h2>Parking</h2>
                 </div>
                 <div class="card rounded-0 shadow-lg border-0">
                     <div class="card-body">

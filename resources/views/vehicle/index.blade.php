@@ -51,7 +51,7 @@
                                     </td>
                                     <td class="text-right">
                                         <a href="/vehicles/{{ $vehicle->id }}/edit" class="icon mr-2 text-info"><i class="fe fe-edit"></i></a>
-                                        <a href="/vehicles/{{ $vehicle->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>
+{{--                                        <a href="/vehicles/{{ $vehicle->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>--}}
                                         <a href="/vehicles/{{ $vehicle->id }}/delete" class="icon mr-2 text-danger"><i class="fe fe-trash"></i></a>
                                     </td>
                                 </tr>

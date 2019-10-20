@@ -60,7 +60,7 @@
                                     </td>
 
                                     <td class="text-right">
-                                        <a href="/parking-space/{{ $payment->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>
+{{--                                        <a href="/parking-space/{{ $payment->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>--}}
                                     </td>
                                 </tr>
                             @endforeach

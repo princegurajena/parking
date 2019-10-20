@@ -23,7 +23,14 @@ use App\System;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {
+
+    if (\auth()->check()){
+        return redirect('/home');
+    }
+
+    return redirect('/login');
+});
 Auth::routes();
 
 Route::middleware('auth')->group(function (){

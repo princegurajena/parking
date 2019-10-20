@@ -56,7 +56,7 @@
                                             @else
                                                 <a href="/users/{{ $user->id }}/remove" class="icon mr-2 text-danger"><i class="fe fe-zap-off"></i></a>
                                             @endif
-                                            <a href="/parking-space/{{ $user->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>
+{{--                                            <a href="/parking-space/{{ $user->id }}/view" class="icon mr-2 text-info"><i class="fe fe-eye"></i></a>--}}
                                         @endcan
                                     </td>
                                 </tr>

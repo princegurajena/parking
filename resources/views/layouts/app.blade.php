@@ -15,7 +15,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
 
-    <title>POS Management</title>
+    <title>Parking</title>
 
     <link href="{{ asset('assets/css/dashboard.css') }}" rel="stylesheet" />
     <script src="{{ asset('assets/js/dashboard.js') }}"></script>
