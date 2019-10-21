@@ -48,13 +48,19 @@ class CancellBookings extends Command
         /** @var Requests $request */
         foreach ($requests as $request)
         {
+            echo 'Looking @ Request : ' . $request->id .PHP_EOL;
+
             if ($request->status === 'init')
             {
                 $request->update([
                     'status' => 'cancelled'
                 ]);
 
+                echo 'Decision @ Request Cancelled : ' . $request->id .PHP_EOL;
+
             } else {
+
+                echo 'Decision @ Request Ended : ' . $request->id .PHP_EOL;
 
                 $request->update([
                     'status' => 'ended'
@@ -72,6 +78,5 @@ class CancellBookings extends Command
 
             }
         }
-
     }
 }

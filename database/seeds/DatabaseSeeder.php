@@ -75,11 +75,6 @@ class DatabaseSeeder extends Seeder
                 'province' => 'Midlands',
                 'country' => 'Zimbabwe',
                 'rate' => 5,
-                'occupied' => $rand == 1 ? now() : null,
-                'occupied_user_id' => $rand == 1 ? 1 : null,
-                'reserved' => $rand == 2 ? now() : null,
-                'reserved_user_id' => $rand == 2 ? 1 : null,
-                'vehicle_id' => $rand == 2 || $rand == 1 ? 1 : null,
             ]);
         }
 
