@@ -425,6 +425,8 @@ class ComposerStaticInit8760588aff4db5c87a2c608bdec3546f
     );
 
     public static $classMap = array (
+        'App\\Censor' => __DIR__ . '/../..' . '/app/Censor.php',
+        'App\\Console\\Commands\\CancellBookings' => __DIR__ . '/../..' . '/app/Console/Commands/CancellBookings.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -432,6 +434,7 @@ class ComposerStaticInit8760588aff4db5c87a2c608bdec3546f
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CensorController' => __DIR__ . '/../..' . '/app/Http/Controllers/CensorController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\ParkingController' => __DIR__ . '/../..' . '/app/Http/Controllers/ParkingController.php',
@@ -448,6 +451,7 @@ class ComposerStaticInit8760588aff4db5c87a2c608bdec3546f
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Notification' => __DIR__ . '/../..' . '/app/Notification.php',
         'App\\ParkingSpace' => __DIR__ . '/../..' . '/app/ParkingSpace.php',
         'App\\Payment' => __DIR__ . '/../..' . '/app/Payment.php',
         'App\\Policies\\SystemPolicy' => __DIR__ . '/../..' . '/app/Policies/SystemPolicy.php',

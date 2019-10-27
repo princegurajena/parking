@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ae9fb84-e890-4d78-af87-3468c90660ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Censor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Console/Commands/SimulateSensor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CensorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_25_100717_create_censors_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_25_100726_create_notifications_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -192,6 +201,12 @@
       <workItem from="1571688041223" duration="29000" />
       <workItem from="1571689221521" duration="1583000" />
       <workItem from="1571694449458" duration="632000" />
+      <workItem from="1571697729514" duration="757000" />
+      <workItem from="1571767964697" duration="630000" />
+      <workItem from="1571780144367" duration="644000" />
+      <workItem from="1571822259834" duration="36000" />
+      <workItem from="1571997898803" duration="301000" />
+      <workItem from="1572204614393" duration="152000" />
     </task>
     <servers />
   </component>
