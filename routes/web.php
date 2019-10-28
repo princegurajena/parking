@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ParkingController;
 use App\Http\Controllers\ParkingSpaceController;
 use App\Http\Controllers\PaymentController;
@@ -51,6 +52,8 @@ Route::middleware('auth')->group(function (){
     Route::get('/parking/{request}/online', [ParkingController::class , 'online']);
     Route::get('/parking/{request}/override', [ParkingController::class , 'override'])->middleware('can:admin,'. System::class);;
 
+
+    Route::get('/notifications', [NotificationController::class , 'index'])->middleware('can:admin,'. System::class);;
 
     Route::get('/users/all', [UserController::class , 'index'])->middleware('can:admin,'. System::class);;
     Route::get('/users/{user}/admin', [UserController::class , 'admin'])->middleware('can:admin,'. System::class);;

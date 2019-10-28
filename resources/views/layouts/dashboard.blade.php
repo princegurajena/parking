@@ -84,6 +84,11 @@
                                         @endcan
                                         @can('admin', \App\System::class)
                                             <li class="nav-item">
+                                                <a href="/notifications" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-bell"></i>Notifications</a>
+                                            </li>
+                                        @endcan
+                                        @can('admin', \App\System::class)
+                                            <li class="nav-item">
                                                 <a href="/users/all" class="nav-link {{ $title == 'Documentation' ? 'active' : '' }}"><i class="fe fe-users"></i>Users</a>
                                             </li>
                                         @endcan

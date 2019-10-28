@@ -15,9 +15,9 @@ class CreateCensorsTable extends Migration
     {
         Schema::create('censors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('lat');
-            $table->string('long');
+            $table->string('name')->nullable();
+            $table->string('lat')->nullable();
+            $table->string('long')->nullable();
             $table->timestamps();
         });
     }
