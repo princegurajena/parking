@@ -172,7 +172,7 @@ class SimulateSensor extends Command
 
                 /** @var ParkingSpace $space */
 
-                $space = ParkingSpace::query()->find($number);
+                $space = ParkingSpace::query()->find($choice);
 
                 Notification::query()->create([
                     'type' => 'parking',
