@@ -125,16 +125,17 @@ class SimulateSensor extends Command
                     ]);
 
                     $location = $request->location;
-                    $location->update([
-                        'occupied' => null,
-                        'occupied_user_id' => null,
-                        'reserved' => null,
-                        'reserved_user_id' => null,
-                        'vehicle_id' => null,
-                    ]);
                 }
 
                 $space = ParkingSpace::query()->find($choice);
+
+                $space->update([
+                    'occupied' => null,
+                    'occupied_user_id' => null,
+                    'reserved' => null,
+                    'reserved_user_id' => null,
+                    'vehicle_id' => null,
+                ]);
 
                 Notification::query()->create([
                     'type' => 'parking',

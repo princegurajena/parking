@@ -7,13 +7,11 @@ use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
-    public function index(){
-
+    public function index()
+    {
         $notifications = Notification::query()->latest()->paginate(20);
-
         return view('notifications.index' , [
             'notifications' => $notifications
         ]);
-
     }
 }

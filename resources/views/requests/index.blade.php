@@ -44,6 +44,7 @@
                                         <div><span class="text-muted">number :</span> {{ $request->vehicle->number }} </div>
                                     </td>
                                     <td>
+                                        <div><span class="text-muted">id :</span> {{ $request->location->id }} </div>
                                         <div><span class="text-muted">name :</span> {{ $request->location->name }} </div>
                                         <div><span class="text-muted">road :</span> {{ $request->location->road }} </div>
                                         <div><span class="text-muted">city :</span> {{ $request->location->city }} </div>

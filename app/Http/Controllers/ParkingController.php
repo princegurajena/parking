@@ -73,10 +73,8 @@ class ParkingController extends Controller
         // create paynow transaction
 
         $paynow = new Paynow(
-//            '6686',
-            '',
-//            '0871a17e-fdd5-4e56-8e57-d64b439d0ba1',
-            '',
+            '6686',
+            '0871a17e-fdd5-4e56-8e57-d64b439d0ba1',
             url("/parking/{$request->id}/online?ref={$request->ref}&id={$request->id}"),
             url("/parking/{$request->id}/online?ref={$request->ref}&id={$request->id}")
         );
