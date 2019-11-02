@@ -72,6 +72,7 @@ class ParkingController extends Controller
 
         // create paynow transaction
 
+
         $paynow = new Paynow(
             '6686',
             '0871a17e-fdd5-4e56-8e57-d64b439d0ba1',

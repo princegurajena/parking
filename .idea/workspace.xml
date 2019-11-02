@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ae9fb84-e890-4d78-af87-3468c90660ef" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/SimulateSensor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/SimulateSensor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NotificationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParkingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParkingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/requests/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/requests/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,6 +127,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -211,7 +209,9 @@
       <workItem from="1572273660231" duration="6528000" />
       <workItem from="1572548278543" duration="778000" />
       <workItem from="1572607333322" duration="1737000" />
-      <workItem from="1572643741870" duration="319000" />
+      <workItem from="1572643741870" duration="534000" />
+      <workItem from="1572645662796" duration="666000" />
+      <workItem from="1572684553227" duration="438000" />
     </task>
     <servers />
   </component>
