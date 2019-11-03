@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ae9fb84-e890-4d78-af87-3468c90660ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ParkingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParkingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/filters/core/ModelFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/filters/core/ModelFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parking/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parking/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +211,9 @@
       <workItem from="1572607333322" duration="1737000" />
       <workItem from="1572643741870" duration="534000" />
       <workItem from="1572645662796" duration="666000" />
-      <workItem from="1572684553227" duration="438000" />
+      <workItem from="1572684553227" duration="3656000" />
+      <workItem from="1572792881075" duration="249000" />
+      <workItem from="1572815993685" duration="142000" />
     </task>
     <servers />
   </component>

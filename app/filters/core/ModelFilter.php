@@ -30,6 +30,8 @@ abstract class ModelFilter
     protected $dates = [];
     protected $range = [];
     protected $sort = [];
+    protected $search = [];
+    protected $defaults = ['sort', 'range'];
 
     /**
      * Create a new ThreadFilters instance.
@@ -52,7 +54,8 @@ abstract class ModelFilter
 
     public function apply(Builder $builder, array $overrides): Builder
     {
-        foreach (array_merge($this->filters, $this->equal , ['sort','range']) as $filter) {
+
+        foreach (array_merge($this->filters, $this->equal, $this->defaults) as $filter) {
 
             $builder = isset($overrides[$filter]) ?
                 $this->run($builder, $filter, $overrides[$filter])
@@ -75,12 +78,58 @@ abstract class ModelFilter
 
     private function equal(Builder $builder, string $column, string $value): Builder
     {
+        $split = explode('.', $column);
+
+        if (count($split) > 1) {
+            return $builder->whereHas($split[0], function (Builder $builder) use ($value, $split) {
+                $builder->where($split[1], "=", $value);
+            });
+        }
+
         return $builder->where($column, "=", $value);
     }
 
     private function in(Builder $builder, string $column, array $value): Builder
     {
+        $split = explode('.', $column);
+
+        if (count($split) > 1) {
+            return $builder->whereHas($split[0], function (Builder $builder) use ($value, $split) {
+                $builder->whereIn($split[1], "=", $value);
+            });
+        }
+
         return $builder->whereIn($column, $value);
+    }
+
+    /** @noinspection MethodVisibilityInspection */
+    /**
+     * @param Builder $builder
+     * @param $value
+     * @return Builder
+     */
+    protected function search(Builder $builder, $value): Builder
+    {
+        $builder = $builder->where(function (Builder $builder) use ($value) {
+
+            foreach ($this->search as $column)
+            {
+                $split = explode('.', $column);
+
+                if (count($split) > 1)
+                {
+                    $builder->whereHas($split[0], function (Builder $builder) use ($value , $split) {
+                        $this->like($builder , $split[1] ,$value);
+                    });
+                    continue;
+                }
+
+                $this->like($builder, $column, $value);
+            }
+
+        });
+
+        return $builder;
     }
 
     /**
@@ -90,6 +139,8 @@ abstract class ModelFilter
      */
     private function range(Builder $builder, string $value): Builder
     {
+        // full range=created,45-345
+        // $value = created,45-345
 //        if (is_string($value)) {
 //            $d = explode(",", $value);
 //            if (count($d) == 2) {
@@ -117,11 +168,9 @@ abstract class ModelFilter
             if (count($d) == 2) {
                 return $builder = $builder->orderBy(
                     $d[0],
-                    in_array(strtolower($d[1]), ['desc', 'asc']) ?
-                        strtolower($d[1]) : 'desc'
+                    in_array(strtolower($d[1]), ['desc', 'asc']) ? strtolower($d[1]) : 'desc'
                 );
             }
-
         }
 
         return $builder;
@@ -137,8 +186,7 @@ abstract class ModelFilter
     private function run(Builder $builder, string $filter, $value): Builder
     {
 
-        if ($value == null || trim($value) === '' )
-        {
+        if ($value == null || trim($value) === '') {
             return $builder;
         }
 
@@ -148,7 +196,7 @@ abstract class ModelFilter
                 $this->equal($builder, $filter, $value);
         }
 
-        if (method_exists($this, $filter)){
+        if (method_exists($this, $filter)) {
             $builder = $this->$filter($builder, $value);
         }
 

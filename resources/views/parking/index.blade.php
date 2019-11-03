@@ -194,7 +194,7 @@
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 18,
                 //-19.517569, 29.836276
-                center: {lat: -19.517569, lng: 29.836276},
+                center: {lat: -19.456731, lng: 29.814081},
                 styles : [
                     {
                         "elementType": "geometry",
