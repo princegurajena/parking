@@ -57,6 +57,7 @@
 
                                     <td class="">
                                         <div><span class="text-muted">created :</span> {{ $request->created_at }} </div>
+                                        <div><span class="text-muted">End :</span> {{ $request->end }} </div>
                                         <div><span class="text-muted">updated :</span> {{ $request->updated_at->diffForHumans() }} </div>
                                     </td>
 

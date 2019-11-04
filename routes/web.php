@@ -32,8 +32,8 @@ Route::get('/', function () {
 
     return redirect('/login');
 });
-Auth::routes();
 
+Auth::routes();
 Route::middleware('auth')->group(function (){
     Route::get('/dashboard', [HomeController::class , 'dashboard']);
     Route::get('/parking-space/all', [ParkingSpaceController::class , 'index'])->middleware('can:admin,'. System::class);
