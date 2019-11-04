@@ -3,7 +3,7 @@
     <style>
         #map {
             width: 100%;
-            height: 70vh;
+            height: 80vh;
         }
 
         #map-side-panel {
@@ -20,8 +20,45 @@
     </style>
 @endsection
 @section('content')
-    <div style="position: relative;height: 70vh" class="">
+    <div style="position: relative;height: 80vh" class="">
         <div style="z-index: 95;position: absolute;bottom: 0;top: 0;right: 0;left: 0;background-color: rgba(0,0,0,0.5)" id="map-overlay" class="d-none"></div>
+        <div id="" class="bg-white border-bottom side-panel-map-open" style="position: absolute;top: 0;bottom: 0;right: 0;z-index: 99;height: 100%;overflow-x: scroll">
+            <div class="p-5 border-bottom d-flex align-items-center">
+                <h4 class="m-0 mr-auto text-center">Parking</h4>
+            </div>
+            <div><div class="table-responsive">
+                    <table class="table card-table table-striped table-vcenter">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Road</th>
+                            <th>City</th>
+                            <th>Activity</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($list as $location)
+                            <tr>
+                                <td>
+                                    <span class="avatar avatar-{{ $location->occupied ? 'red' : ( $location->reserved ? 'orange' : 'green' ) }}">{{ $location->occupied ? 'O' : ( $location->reserved ? 'R' : 'A' ) }}</span>
+                                </td>
+                                <td>{{ $location->name }}</td>
+                                <td>{{ $location->road }}</td>
+                                <td>{{ $location->city }}</td>
+                                <td>{{ $location->updated_at->diffForHumans() }}</td>
+                                <td class="text-center w-1"><a href="#" data-id="{{ $location->id }}" class="icon map-location-view"><i class="fe fe-eye"></i></a></td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer pt-6 d-flex justify-content-center">
+                    {{ $list->links() }}
+                </div>
+            </div>
+        </div>
         <div id="map-side-panel" class="bg-white border-bottom side-panel-map" style="position: absolute;top: 0;bottom: 0;right: 0;z-index: 99;height: 100%;overflow-x: scroll">
             <div class="p-5 border-bottom d-flex align-items-center">
                 <h4 class="m-0 mr-auto">Parking Booking</h4>
@@ -34,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div id="" class="bg-white  shadow-lg rounded" style="width:400px;position: absolute;top: 10px;left: 0;right: 0;z-index: 90;margin-left: auto;margin-right: auto">
+        <div id="" class="bg-white  shadow-lg rounded" style="width:400px;position: absolute;top: 10px;left: 0;right: 0;z-index: 90;margin-right: auto;margin-left: 5%">
             <form class="input-icon">
                 <input value="{{ old('search' , request()->get('search')) }}" type="search" name="search" class="form-control header-search py-3 pl-5 border-0" placeholder="Search…" tabindex="1">
                 <div class="input-icon-addon pr-5">
@@ -42,75 +79,30 @@
                 </div>
             </form>
         </div>
-        <div id="map" class="border-bottom"></div>
-        <div style="margin-top: -57px" class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Parking</h3>
-                            <form method="get" class="card-options">
-                                <div>
-                                    <label class="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" class="custom-control-input" name="reserved" value="true" {{ request()->get('reserved')  ? 'checked' : ''}}>
-                                        <span class="custom-control-label">Reserved</span>
-                                    </label>
-                                    <label class="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" class="custom-control-input" name="occupied" value="true" {{ request()->get('occupied')  ? 'checked' : ''}}>
-                                        <span class="custom-control-label">Occupied</span>
-                                    </label>
-                                    <label class="custom-control custom-checkbox custom-control-inline">
-                                        <input type="checkbox" class="custom-control-input" name="available" value="true" {{ request()->get('available')  ? 'checked' : ''}}>
-                                        <span class="custom-control-label">Available</span>
-                                    </label>
-                                </div>
-                                <div>
-                                    <div class="input-group ">
-                                        <input value="{{ old('search' , request()->get('search')) }}" type="text" class="form-control form-control-sm" placeholder="Search something..." name="search">
-                                        <span class="input-group-btn ml-2">
-                                        <button class="btn btn-sm btn-default" type="submit">
-                                          <span class="fe fe-filter"></span>
-                                        </button>
-                                      </span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table card-table table-striped table-vcenter">
-                                <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Name</th>
-                                    <th>Road</th>
-                                    <th>City</th>
-                                    <th>Activity</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($list as $location)
-                                    <tr>
-                                        <td>
-                                            <span class="avatar avatar-{{ $location->occupied ? 'red' : ( $location->reserved ? 'orange' : 'green' ) }}">{{ $location->occupied ? 'O' : ( $location->reserved ? 'R' : 'A' ) }}</span>
-                                        </td>
-                                        <td>{{ $location->name }}</td>
-                                        <td>{{ $location->road }}</td>
-                                        <td>{{ $location->city }}</td>
-                                        <td>{{ $location->updated_at->diffForHumans() }}</td>
-                                        <td class="text-center w-1"><a href="#" data-id="{{ $location->id }}" class="icon map-location-view"><i class="fe fe-eye"></i></a></td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="card-footer pt-6 d-flex justify-content-center">
-                            {{ $list->links() }}
-                        </div>
-                    </div>
+        <div id="" class="bg-white  shadow-lg p-5" style="width:400px;position: absolute;bottom: 10px;left: 0;right: 0;z-index: 90;margin-right: auto;margin-left: 5%">
+            <form method="get" class="card-options">
+                <div>
+                    <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                        <input type="checkbox" class="custom-control-input" name="reserved" value="true" {{ request()->get('reserved')  ? 'checked' : ''}}>
+                        <span class="custom-control-label">Reserved</span>
+                    </label>
+                    <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                        <input type="checkbox" class="custom-control-input" name="occupied" value="true" {{ request()->get('occupied')  ? 'checked' : ''}}>
+                        <span class="custom-control-label">Occupied</span>
+                    </label>
+                    <label class="custom-control custom-checkbox custom-control-inline mb-0">
+                        <input type="checkbox" class="custom-control-input" name="available" value="true" {{ request()->get('available')  ? 'checked' : ''}}>
+                        <span class="custom-control-label">Available</span>
+                    </label>
                 </div>
-            </div>
+                <div>
+                    <button class="btn btn-sm btn-default btn-sm text-center" type="submit">
+                        <i class="fe fe-filter"></i>
+                    </button>
+                </div>
+            </form>
         </div>
+        <div id="map" class="border-bottom"></div>
     </div>
 
 @endsection
